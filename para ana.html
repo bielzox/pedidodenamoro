@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💙 𝑻𝑬 𝑨𝑴𝑶 💙</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('anaa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: brightness(0.3);
+            z-index: -3;
+            transition: background-image 2s ease-in-out;
+        }
+
+        .mini-bg {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.18;
+            filter: brightness(1.2);
+            border-radius: 15px;
+            z-index: -2;
+            animation: flutuar 12s infinite ease-in-out alternate;
+        }
+
+        @keyframes flutuar {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: translateY(-20px) scale(1.05);
+                opacity: 0.25;
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.2;
+            }
+        }
+
+        header {
+            background: linear-gradient(to bottom, #4d91ff 0%, #0062ff9d 80%, transparent 100%);
+            color: #fff;
+            text-align: center;
+            padding: 15px 40px;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .container {
+            text-align: left;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2374f6f6;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            line-height: 1.7;
+            color: #f2f2f2;
+        }
+
+        .heart {
+            color: #e91e63;
+            font-size: 3rem;
+            animation: pulse 1.5s infinite;
+            margin-top: 40px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        button {
+            background-color: #ff000000;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background-color: #0062ff9d;
+            transform: scale(1.05);
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 5;
+            padding: 20px;
+        }
+
+        .overlay h2 {
+            font-size: 2.8rem;
+            color: #5494fb;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .overlay p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #fff;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ffffff88;
+            }
+
+            to {
+                text-shadow: 0 0 30px #ffffff7c, 0 0 60px #0062ff89;
+            }
+        }
+
+        .heart-fall {
+            position: fixed;
+            top: -10px;
+            color: #ff80ab;
+            font-size: 1.8rem;
+            animation: fall linear forwards;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .foto-fall {
+            position: fixed;
+            top: -80px;
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            opacity: 0.8;
+            animation: cair linear forwards;
+            z-index: 0;
+        }
+
+        @keyframes cair {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .spark {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ff00c8;
+            border-radius: 50%;
+            animation: sparkle 1s ease-out forwards;
+        }
+
+        p.larger {
+            margin-top: 60px;
+            text-align: center;
+            width: 80%;
+            max-width: 100%;
+        }
+
+        p.larger2 {
+            text-align: center;
+            width: 80%;
+            max-width: 100%;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<header>🤍 𝑃𝑎𝑟𝑎 𝑢𝑚𝑎 𝑝𝑒𝑠𝑠𝑜𝑎 𝑚𝑢𝑖𝑡𝑜 𝑒𝑠𝑝𝑒𝑐𝑖𝑎𝑙 🤍</header>
+
+<div class="container">
+    <h1>𝑶𝒊𝒊, 𝑨𝒏𝒂𝒂𝒂𝒂 😊𝒒𝒖𝒆𝒓𝒐 𝒒𝒖𝒆 𝒍𝒆𝒊𝒂 𝒄𝒐𝒎 𝑴𝑼𝑰𝑻𝑨 𝑨𝑻𝑬𝑵𝑪𝑨𝑶 ⚠️ </h1>
+
+    <p>
+        Não sou muito bom com frases mas... 
+        <p>
+        Ana, Desde o dia 10 de novembro, naquela praça da Cidade Alta, quando nossos caminhos se cruzaram sem aviso,
+        <br>
+        algo em mim mudou. Nunca imaginei que um simples encontro no "Gta Rp" pudesse virar algo tão especial. Mas
+        virou. E eu sou grato por isso todos os dias.
+        <br><br>
+        Você, aí do Rio de Janeiro… eu, daqui… e mesmo assim parece que a distância diminui toda vez que a gente
+        conversa. Você me faz sentir leve, feliz, mais eu mesmo.
+        Às vezes eu paro e penso: como a vida é doida. A gente se encontra num mundo virtual e, mesmo assim, o que nasce
+        é tão real.
+        <br><br>
+        Eu sei que sou mais novo e você é mais velha, mas isso nunca foi uma barreira — se fosse, o que eu sinto não
+        teria crescido tão rápido e tão bonito.
+        Na verdade, isso só faz nossa conexão ser ainda mais única.
+        Você me inspira, me ensina, me encanta, me ajuda e me trata até como filho kkk.
+        <br><br>
+        E eu acredito, de verdade, que um dia a gente ainda vai se ver pessoalmente.
+        Conhecer lugares de verdade, rir sem microfone, sentir o abraço que hoje só existe na imaginação.
+        Quem sabe até construir algo maior, algo nosso… talvez até um futuro juntos, daqueles que a gente só fala
+        baixinho, com medo de parecer exagero — mas que o coração deseja de verdade.
+        <br><br>
+        Ana, obrigado por existir na minha vida.
+        <br>
+        Obrigado por ser esse pedacinho de carinho que
+        <br>
+        chegou do nada e ficou.
+        <br>
+        E tomara que fique por muito tempo.
+        <br><br>
+        Já te pedi em namoro no RP mas não podia ficar de fora um pedido desse,
+        <br>
+        até porque faço sites e tinha que fazer um desse pra minha amada.
+    </p>
+
+    <div class="heart">💗</div>
+
+    <p class="larger">
+        Então... Chegou o momento...
+        <br>
+        De te fazer a pergunta que eu não tenho idéia do que pode acontecer:
+    </p>
+
+    <button onclick="mostrarPedido()">💍 Quer namorar comigo?</button>
+</div>
+
+<!-- Modal do pedido -->
+<div class="overlay" id="overlay" style="display:none;" onclick="fecharTudo()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <h2>Escolha sua resposta:</h2>
+
+        <button onclick="responderSim()" style="padding:10px 20px; margin:10px; font-size:18px;">
+            SIM 😁💖
+        </button>
+
+        <button onclick="responderNao()" style="padding:10px 20px; margin:10px; font-size:18px;">
+            NÃO 😞💔
+        </button>
+    </div>
+</div>
+
+<!-- Mensagem SIM -->
+<div class="overlay" id="respostaSim" style="display:none;" onclick="fecharTudo()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <h2>Você disse SIIIIM!! 😍💞</h2>
+        <p class="larger2">Prometo te amar muito, muito, muito... Cuidar de você e estar sempre ao seu lado. 💞</p>
+        <div class="heart">💕💕💕</div>
+    </div>
+</div>
+
+<!-- Mensagem NÃO -->
+<div class="overlay" id="respostaNao" style="display:none;" onclick="fecharTudo()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <h2>Ah... beleza então 😢</h2>
+        <p class="larger2">Foi uma boa tentatia eu acho 💙</p>
+        <div class="heart">😞💧</div>
+    </div>
+</div>
+
+<script>
+    function mostrarPedido() {
+        fecharTudo(); // garante que nenhum outro esteja aberto
+        document.getElementById("overlay").style.display = "flex";
+    }
+
+    function responderSim() {
+        fecharTudo();
+        document.getElementById("respostaSim").style.display = "flex";
+    }
+
+    function responderNao() {
+        fecharTudo();
+        document.getElementById("respostaNao").style.display = "flex";
+    }
+
+    function fecharTudo() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("respostaSim").style.display = "none";
+        document.getElementById("respostaNao").style.display = "none";
+    }
+
+    // FECHAR COM ESC
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            fecharTudo();
+        }
+    });
+</script>
+
+
+<div id="playerMusica" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 220px;
+  padding: 18px;
+  background: #027bfda6;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px #027bfd;
+  border-radius: 18px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  z-index: 9999;
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: .25s ease;
+">
+
+    <!-- Áudios -->
+    <audio id="musica1" src="It's You.mp3" loop></audio>
+    <audio id="musica2" src="Friends.mp3" loop></audio>
+    <audio id="musica3" src="Aliança.mp3" loop></audio>
+    <audio id="musica4" src="Thinking.mp3" loop></audio>
+    <audio id="musica5" src="Love Me Like You Do.mp3" loop></audio>
+    <audio id="musica6" src="Photograph.mp3" loop></audio>
+    <audio id="musica7" src="bem.mp3" loop></audio>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <strong style="font-size:15px; letter-spacing:1px;">🎵 Músicas
+            <br>
+            Aperte No "▶"
+            </br>
+        </strong>
+        <button id="btnPlay"
+            style="background: #00000066; border:none; padding:6px 14px; color:#000000; border-radius:12px; cursor:pointer; font-size:14px; transition:.2s;">▶</button>
+    </div>
+    <div style="display:flex; justify-content:space-between; gap:10px; margin-bottom:10px;">
+        <button id="btnPrev"
+            style="flex:1; background:#00000066; border:none; padding:6px; border-radius:12px; color:#000000; cursor:pointer;">⏮</button>
+        <button id="btnNext"
+            style="flex:1; background:#00000066; border:none; padding:6px; border-radius:12px; color:#000000; cursor:pointer;">⏭</button>
+    </div>
+
+    <div style="margin-top:12px; font-size:13px;">
+        Selecionar música:
+        <select id="selectMusica"
+            style="width:100%; padding:6px; margin-top:6px; border-radius:10px; background:#ffffff00; color:#ffffff; border:1px solid #ffffff; cursor:pointer; font-weight:600;">
+            <option value="1" style="color:#000000;">It's You - Ali Gatie </option>
+            <option value="2" style="color:#040404;">Friends - Chase Atlantic</option>
+            <option value="3" style="color:#040404fe;">Aliança - Tribalistas</option>
+            <option value="4" style="color:#040404fe;">Thinking out loud</option>
+            <option value="5" style="color:#040404fe;">Love Me Like You Do - Ellie Goulding</option>
+            <option value="6" style="color:#040404fe;">Photograph - Ed Sheeran</option>
+            <option value="7" style="color:#040404fe;">Bem - Chapéus de Palha</option>
+        </select>
+    </div>
+
+    <div style="margin-top:12px;">
+        <button id="btnRestart"
+            style="width:100%; background:#00000000; border:none; padding:6px; color:#ffffff; border-radius:12px; cursor:pointer; font-size:14px;">↻
+            Reiniciar</button>
+    </div>
+
+    <div style="margin-top:14px; font-size:13px;">
+        Volume
+        <input id="vol" type="range" min="0" max="1" step="0.01" value="0.1" style="width:100%; cursor:pointer;">
+    </div>
+</div>
+
+<script>
+    const musicas = [
+        document.getElementById("musica1"),
+        document.getElementById("musica2"),
+        document.getElementById("musica3"),
+        document.getElementById("musica4"),
+        document.getElementById("musica5"),
+        document.getElementById("musica6"),
+        document.getElementById("musica7")
+    ];
+
+    let musicaAtual = 0;
+    let tocando = false;
+
+    const btnPlay = document.getElementById("btnPlay");
+    const btnPrev = document.getElementById("btnPrev");
+    const btnNext = document.getElementById("btnNext");
+    const btnRestart = document.getElementById("btnRestart");
+    const selectMusica = document.getElementById("selectMusica");
+    const volume = document.getElementById("vol");
+
+    // Volume inicial
+    musicas.forEach(m => { m.volume = 0.1; m.muted = false; });
+
+    function pararTodas() {
+        musicas.forEach(m => { m.pause(); m.currentTime = 0; });
+    }
+
+    function tocarAtual() {
+        pararTodas();
+        musicas[musicaAtual].currentTime = 0;
+        const playPromise = musicas[musicaAtual].play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                tocando = true;
+                btnPlay.textContent = "❚❚";
+                selectMusica.value = musicaAtual + 1;
+            }).catch(error => {
+                // Se o navegador bloquear autoplay, o botão ainda funcionará
+                tocando = false;
+                btnPlay.textContent = "▶";
+            });
+        }
+    }
+
+    // AUTOPLAY ao carregar a página
+    window.addEventListener("load", () => {
+        tocarAtual();
+    });
+
+    // PLAY / PAUSE
+    btnPlay.addEventListener("click", () => {
+        const atual = musicas[musicaAtual];
+        if (!tocando) {
+            atual.play();
+            tocando = true;
+            btnPlay.textContent = "❚❚";
+        } else {
+            atual.pause();
+            tocando = false;
+            btnPlay.textContent = "▶";
+        }
+    });
+
+    // NEXT
+    btnNext.addEventListener("click", () => {
+        musicaAtual = (musicaAtual + 1) % musicas.length;
+        tocarAtual();
+    });
+
+    // PREVIOUS
+    btnPrev.addEventListener("click", () => {
+        musicaAtual = (musicaAtual - 1 + musicas.length) % musicas.length;
+        tocarAtual();
+    });
+
+    // SELECIONAR MÚSICA
+    selectMusica.addEventListener("change", () => {
+        musicaAtual = Number(selectMusica.value) - 1;
+        tocarAtual();
+    });
+
+    // REINICIAR
+    btnRestart.addEventListener("click", () => {
+        const atual = musicas[musicaAtual];
+        atual.currentTime = 0;
+        if (tocando) atual.play();
+    });
+
+    // VOLUME
+    volume.addEventListener("input", () => {
+        musicas[musicaAtual].volume = volume.value;
+    });
+
+    // Fundo troca automaticamente entre imagens
+    const fundos = ['simpsons.jpg', 'rapunzel.jpg'];
+    let index = 0;
+    setInterval(() => {
+        index = (index + 1) % fundos.length;
+        document.styleSheets[0].cssRules[1].style.backgroundImage = `url('${fundos[index]}')`;
+    }, 8000);
+
+    // corações + fotos caindo
+    function criarCoracoes() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-fall');
+        heart.textContent = '💙';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(criarCoracoes, 300);
+
+    // novas fotos caindo do céu
+    const imagens = ['anaa.jpg', 'rapunzel.jpg', 'simpsons.jpg'];
+    function fotosCaindo() {
+        const foto = document.createElement('div');
+        foto.classList.add('foto-fall');
+        foto.style.left = Math.random() * 100 + 'vw';
+        foto.style.animationDuration = (5 + Math.random() * 5) + 's';
+        foto.style.backgroundImage = `url('${imagens[Math.floor(Math.random() * imagens.length)]}')`;
+        document.body.appendChild(foto);
+        setTimeout(() => foto.remove(), 8000);
+    }
+    setInterval(fotosCaindo, 600);
+
+    function mostrarPedido() {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'flex';
+        criarFogos();
+    }
+
+    function criarFogos() {
+        for (let i = 0; i < 40; i++) {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
+            spark.style.left = (50 + Math.random() * 40 - 20) + '%';
+            spark.style.top = (50 + Math.random() * 40 - 20) + '%';
+            spark.style.backgroundColor = ['#fff', '#e91e63', '#ff80ab'][Math.floor(Math.random() * 3)];
+            document.body.appendChild(spark);
+            setTimeout(() => spark.remove(), 1000);
+        }
+    }
+</script>
+</body>
+
+</html>
