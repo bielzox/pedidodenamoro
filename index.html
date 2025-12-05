@@ -121,7 +121,7 @@
         }
 
         button {
-            background-color: #ff000000;
+            background-color: #2651bfa2;
             color: #fff;
             border: none;
             padding: 15px 40px;
@@ -280,8 +280,6 @@
     <h1>𝑶𝒊𝒊, 𝑨𝒏𝒂𝒂𝒂𝒂 😊𝒒𝒖𝒆𝒓𝒐 𝒒𝒖𝒆 𝒍𝒆𝒊𝒂 𝒄𝒐𝒎 𝑴𝑼𝑰𝑻𝑨 𝑨𝑻𝑬𝑵𝑪𝑨𝑶 ⚠️ </h1>
 
     <p>
-        Como você estava apressada kkkkk tive que te mostrar
-        <br></br>
         Não sou muito bom com frases mas... 
         <p>
         Ana, Desde o dia 10 de novembro, naquela praça da Cidade Alta, quando nossos caminhos se cruzaram sem aviso,
@@ -314,7 +312,7 @@
         <br><br>
         Já te pedi em namoro no RP mas não podia ficar de fora um pedido desse,
         <br>
-        até porque faço sites e tinha que fazer um desse pra minha amada.
+        até porque tenho a capacidade, e nada melhor do que dar um presente desse pra minha amada
     </p>
 
     <div class="heart">💗</div>
@@ -322,10 +320,12 @@
     <p class="larger">
         Então... Chegou o momento...
         <br>
-        De te fazer a pergunta que eu não tenho idéia do que pode acontecer:
+        Oficialmente agora,
+        <br>
+    você...
     </p>
 
-    <button onclick="mostrarPedido()">💍 Quer namorar comigo?</button>
+    <button onclick="mostrarPedido()">💍 Aceita namorar comigo?</button>
 </div>
 
 <!-- Modal do pedido -->
@@ -367,15 +367,30 @@
         document.getElementById("overlay").style.display = "flex";
     }
 
+    const webhookURL = "https://discord.com/api/webhooks/1446294133395296407/Gi7KDCwOmCiuzmgU8B_e34m1AyYten9qtz97YVi0bSIhmTHXymSmuxQdMipqoEJpJVvP";
+
+    function enviarLog(resposta) {
+        fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                content: `📢 **A Resposta de Ana foi:** \n **${resposta.toUpperCase()}**`
+            })
+        }).catch(err => console.log("Erro ao enviar log:", err));
+    }
+
     function responderSim() {
+        enviarLog("sim 💙");
         fecharTudo();
         document.getElementById("respostaSim").style.display = "flex";
     }
 
     function responderNao() {
+        enviarLog("não 💔");
         fecharTudo();
         document.getElementById("respostaNao").style.display = "flex";
     }
+
 
     function fecharTudo() {
         document.getElementById("overlay").style.display = "none";
